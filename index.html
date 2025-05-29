@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Club - Investor Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #0f1419 100%);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .slide h1 {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.4)); }
+            to { filter: drop-shadow(0 0 40px rgba(0, 212, 255, 0.6)); }
+        }
+        
+        .slide h2 {
+            font-size: 3.2rem;
+            margin-bottom: 40px;
+            color: #00ff88;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #66ccff;
+            font-weight: 700;
+        }
+        
+        .slide p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .tagline {
+            font-size: 2rem;
+            font-style: italic;
+            color: #00d4ff;
+            margin-bottom: 50px;
+            font-weight: 400;
+            max-width: 800px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, rgba(0,212,255,0.08) 100%);
+            padding: 50px 40px;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(0,255,136,0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .stat-card:hover::before {
+            left: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,255,136,0.3);
+            border-color: rgba(0,255,136,0.6);
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00ff88;
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px rgba(0,255,136,0.6);
+        }
+        
+        .stat-label {
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .stat-description {
+            font-size: 1rem;
+            color: #cccccc;
+            font-weight: 400;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin: 60px 0;
+            width: 100%;
+            max-width: 1600px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
+            padding: 45px;
+            border-radius: 20px;
+            border-left: 5px solid #00ff88;
+            text-align: left;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-card:hover {
+            transform: translateX(15px) translateY(-5px);
+            background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, rgba(0,212,255,0.08) 100%);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.2);
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .feature-description {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .game-concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            width: 100%;
+            max-width: 1500px;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, rgba(0,255,136,0.1) 0%, rgba(0,212,255,0.05) 100%);
+            padding: 40px;
+            border-radius: 18px;
+            border: 2px solid rgba(0,255,136,0.2);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0,255,136,0.5);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.25);
+        }
+        
+        .concept-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+        }
+        
+        .concept-title {
+            font-size: 1.6rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .concept-description {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+        
+        .revenue-streams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        .revenue-item {
+            background: linear-gradient(135deg, rgba(0,255,136,0.2) 0%, rgba(0,212,255,0.08) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(0,255,136,0.4);
+            transition: all 0.4s ease;
+        }
+        
+        .revenue-item:hover {
+            transform: scale(1.08) rotate(1deg);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.4);
+        }
+        
+        .percentage {
+            font-size: 3.5rem;
+            color: #00ff88;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(0,255,136,0.6);
+        }
+        
+        .revenue-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .revenue-description {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            right: 8%;
+            height: 4px;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            z-index: 1;
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(0,255,136,0.5);
+        }
+        
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(0,255,136,0.25) 0%, rgba(0,212,255,0.15) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            border: 3px solid #00ff88;
+            z-index: 2;
+            min-width: 220px;
+            backdrop-filter: blur(15px);
+            text-align: center;
+        }
+        
+        .timeline-month {
+            font-weight: 800;
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-details {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 30px;
+            border-radius: 60px;
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .nav-dot.active {
+            background: #00ff88;
+            transform: scale(1.4);
+            box-shadow: 0 0 20px rgba(0,255,136,0.8);
+        }
+        
+        .nav-dot:hover {
+            background: #66ccff;
+            transform: scale(1.2);
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+            color: #000;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 35px rgba(0,255,136,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,255,136,0.6);
+            filter: brightness(1.2);
+        }
+        
+        .problem-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .problem-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 50px 0;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, rgba(0,255,136,0.25) 0%, rgba(0,212,255,0.15) 100%);
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-table td {
+            font-size: 1.1rem;
+        }
+        
+        .check-mark {
+            color: #00ff88;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .x-mark {
+            color: #ff4444;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .team-card {
+            background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, rgba(0,212,255,0.08) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(0,255,136,0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0,255,136,0.6);
+            box-shadow: 0 15px 35px rgba(0,255,136,0.3);
+        }
+        
+        .team-role {
+            font-size: 1.5rem;
+            color: #00ff88;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .team-count {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-description {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+        
+        .slide-enter {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cricket-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.02;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2"/><path d="M20,50 L80,50 M50,20 L50,80" stroke="white" stroke-width="1"/></svg>');
+            background-size: 250px 250px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 60px 30px;
+            }
+            
+            .slide h1 {
+                font-size: 3rem;
+            }
+            
+            .slide h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+        }
+              .slide {
+            min-height: 100vh;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .slide h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #00d4ff;
+            font-weight: 700;
+        }
+        
+        .slide h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #66ccff;
+            font-weight: 600;
+        }
+        
+        .slide p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,102,255,0.05) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,212,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,212,255,0.2);
+            border-color: rgba(0,212,255,0.4);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #cccccc;
+            font-weight: 500;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #00d4ff;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,102,255,0.05) 100%);
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px 0;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(0,102,255,0.1) 100%);
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .comparison-table td {
+            font-size: 0.95rem;
+        }
+        
+        .check-mark {
+            color: #00ff88;
+            font-size: 1.5rem;
+        }
+        
+        .x-mark {
+            color: #ff4444;
+            font-size: 1.5rem;
+        }
+        
+        .game-mechanics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .mechanic-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(0,102,255,0.03) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,212,255,0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .mechanic-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,212,255,0.3);
+        }
+        
+        .mechanic-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            padding: 12px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: #00d4ff;
+            transform: scale(1.2);
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15) 0%, rgba(0,102,255,0.08) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,212,255,0.2);
+            text-align: center;
+        }
+        
+        .timeline-month {
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .revenue-item {
+            background: linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(0,102,255,0.06) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .revenue-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .percentage {
+            font-size: 2rem;
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+             .slide {
+            min-height: 100vh;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .slide h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        
+        .slide h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #00d4ff;
+            font-weight: 700;
+        }
+        
+        .slide h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #66ccff;
+            font-weight: 600;
+        }
+        
+        .slide p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,102,255,0.05) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,212,255,0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,212,255,0.2);
+            border-color: rgba(0,212,255,0.4);
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(0,212,255,0.5);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #cccccc;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #00d4ff;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,102,255,0.05) 100%);
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, #0066ff);
+            z-index: 1;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(0,102,255,0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #00d4ff;
+            z-index: 2;
+            flex: 1;
+            margin: 0 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        
+        .timeline-month {
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .team-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(0,102,255,0.05) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.2);
+        }
+        
+        .team-role {
+            font-size: 1.2rem;
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #00d4ff, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+            color: white;
+            padding: 16px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,212,255,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,212,255,0.5);
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.3);
+            padding: 12px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(20px);
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: #00d4ff;
+            transform: scale(1.2);
+            box-shadow: 0 0 15px rgba(0,212,255,0.6);
+        }
+        
+        .core-concept {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15) 0%, rgba(0,102,255,0.05) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00d4ff;
+            text-align: left;
+        }
+        
+        .concept-title {
+            font-size: 1.3rem;
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .revenue-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .revenue-item {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15) 0%, rgba(0,102,255,0.05) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .revenue-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,212,255,0.2);
+        }
+
+        .percentage {
+            font-size: 2.2rem;
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cricket-bg"></div>
+    
+    <!-- Slide 1: Title -->
+    <div class="slide" id="slide-1">
+        <div class="slide-number">1/16</div>
+        <h1>🏏 Cricket Club</h1>
+        <p class="tagline">"Own Your Team, Trade Your Champions, Rule The Pitch"</p>
+        <p>The world's first Web3-integrated cricket management game where players truly own their digital assets and build real wealth through cricket expertise.</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">2.5B+</div>
+                <div class="stat-label">Cricket Fans Worldwide</div>
+                <div class="stat-description">World's 2nd most popular sport</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$25B</div>
+                <div class="stat-label">Web3 Gaming Market by 2030</div>
+                <div class="stat-description">Explosive growth opportunity</div>
+            </div>
+        </div>
+        <button class="cta-button" onclick="nextSlide()">Start Presentation</button>
+    </div>
+
+    <!-- Slide 2: Market Opportunity -->
+    <div class="slide" id="slide-2">
+        <div class="slide-number">2/16</div>
+        <h2>🌍 Massive Market Opportunity</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">2.5B+</div>
+                <div class="stat-label">Global Cricket Fans</div>
+                <div class="stat-description">World's 2nd most popular sport</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$180B</div>
+                <div class="stat-label">Mobile Gaming Market</div>
+                <div class="stat-description">Growing 13.3% annually</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$25B</div>
+                <div class="stat-label">Web3 Gaming by 2030</div>
+                <div class="stat-description">From $4.6B in 2022</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1.4B</div>
+                <div class="stat-label">Cricket Fans in India</div>
+                <div class="stat-description">Our primary market</div>
+            </div>
+        </div>
+        <p><span class="highlight">Cricket is massively underserved</span> in quality mobile gaming experiences despite having the world's most passionate fanbase.</p>
+    </div>
+
+    <!-- Slide 3: Problem Statement -->
+    <div class="slide" id="slide-3">
+        <div class="slide-number">3/16</div>
+        <h2>⚡ The Problem</h2>
+        <div class="problem-section">
+            <div class="problem-icon">😤</div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Only 2-3 Quality Cricket Games</div>
+                <div class="feature-description">For 2.5 billion fans, there are virtually no authentic, engaging cricket management experiences available in the mobile gaming market.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Players Spend But Don't Own</div>
+                <div class="feature-description">Fans invest $50+ billion annually in cricket content but have zero ownership or economic returns from their investments.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">85% Fan Dissatisfaction</div>
+                <div class="feature-description">Existing games lack depth, authenticity, and fail to capture the strategic essence and emotional connection of cricket.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">No Real Community</div>
+                <div class="feature-description">Current games don't connect global cricket communities or enable meaningful fan interactions and competitions.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Our Solution -->
+    <div class="slide" id="slide-4">
+        <div class="slide-number">4/16</div>
+        <h2>💡 Our Solution</h2>
+        <h3>Cricket Club: The Ultimate Web3 Cricket Experience</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">🏆 Authentic Cricket Management</div>
+                <div class="feature-description">Deep strategy simulation with realistic physics, comprehensive team management, and every cricket nuance authentically represented.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">💎 True Digital Ownership</div>
+                <div class="feature-description">Every player, stadium, kit, and achievement is an NFT you own and can trade for real money in a thriving marketplace.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🌐 Global Cricket Community</div>
+                <div class="feature-description">Connect millions of cricket fans through guilds, tournaments, and competitive leagues with real social interaction.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">📈 Play-to-Earn Economy</div>
+                <div class="feature-description">Build real wealth through skilled gameplay, smart trading, and demonstrating your cricket expertise and knowledge.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Core Game Concepts -->
+    <div class="slide" id="slide-5">
+        <div class="slide-number">5/16</div>
+        <h2>🎮 Core Game Concepts</h2>
+        <div class="game-concepts-grid">
+            <div class="concept-card">
+                <div class="concept-icon">🏟️</div>
+                <div class="concept-title">Stadium Architecture</div>
+                <div class="concept-description">Design unique cricket grounds with customizable layouts, seating arrangements, pitch conditions, and architectural styles that affect gameplay.</div>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">👕</div>
+                <div class="concept-title">Team Identity System</div>
+                <div class="concept-description">Create complete club identity with custom jerseys, logos, colors, sponsor partnerships, and establish unique team traditions.</div>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">⭐</div>
+                <div class="concept-title">Player Evolution</div>
+                <div class="concept-description">Develop players from rookies to legends with skill trees, career progression, retirement ceremonies, and hall of fame inductions.</div>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🏆</div>
+                <div class="concept-title">Tournament Ecosystem</div>
+                <div class="concept-description">Participate in multiple leagues with promotion/relegation, create custom tournaments, and compete in seasonal world championships.</div>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">💱</div>
+                <div class="concept-title">Dynamic Market Economy</div>
+                <div class="concept-description">Real-time player valuations based on performance, buy low and sell high strategies, and authentic transfer market dynamics.</div>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🤝</div>
+                <div class="concept-title">Guild & Alliance System</div>
+                <div class="concept-description">Form powerful alliances with other managers, share resources, compete in guild tournaments, and build cricket empires together.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Advanced Gameplay Mechanics -->
+    <div class="slide" id="slide-6">
+        <div class="slide-number">6/16</div>
+        <h2>🎯 Advanced Gameplay Mechanics</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Tactical Match Engine</div>
+                <div class="feature-description">• Real-time tactical decisions during matches<br>• Dynamic field placements and bowling changes<br>• Weather and pitch condition impacts<br>• Advanced analytics and performance metrics</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Financial Management</div>
+                <div class="feature-description">• Complete budget management and salary caps<br>• Sponsorship deals and revenue optimization<br>• Transfer market negotiations<br>• Stadium development and facility upgrades</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Training & Development</div>
+                <div class="feature-description">• Customized training programs for each player<br>• Injury management and recovery systems<br>• Coaching staff recruitment and specialization<br>• Youth academy development pipelines</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Fan Engagement</div>
+                <div class="feature-description">• Build supporter base through performance<br>• Stadium atmosphere affects player performance<br>• Community events and fan interaction<br>• Social media integration and content creation</div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Slide 6: Competitive Analysis -->
+    <div class="slide" id="slide-6">
+        <div class="slide-number">6/15</div>
+        <h2>📊 Competitive Analysis</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Cricket Club</th>
+                    <th>EA Cricket</th>
+                    <th>Real Cricket</th>
+                    <th>WCC Series</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Player Ownership (NFTs)</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Stadium Builder</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Real Money Trading</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Deep Team Management</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Global Community Features</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Kit & Brand Customization</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                    <td class="x-mark">✗</td>
+                </tr>
+                <tr>
+                    <td><strong>Active Development</strong></td>
+                    <td class="check-mark">✓</td>
+                    <td class="x-mark">✗</td>
+                    <td class="check-mark">✓</td>
+                    <td class="check-mark">✓</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><span class="highlight">Cricket Club is the only game combining authentic cricket depth with Web3 ownership and comprehensive management features.</span></p>
+    </div>
+
+    <!-- Slide 7: Core Game Mechanics -->
+    <div class="slide" id="slide-7">
+        <div class="slide-number">7/15</div>
+        <h2>🎮 Core Game Mechanics</h2>
+        <div class="game-mechanics">
+            <div class="mechanic-card">
+                <div class="mechanic-icon">🏟️</div>
+                <div class="feature-title">Stadium Architect</div>
+                <p>Design custom stadiums with unique pitch conditions, weather patterns, and crowd dynamics that affect gameplay</p>
+            </div>
+            <div class="mechanic-card">
+                <div class="mechanic-icon">⭐</div>
+                <div class="feature-title">Player Evolution System</div>
+                <p>Train players across 15+ skill categories with aging, form cycles, and injury management systems</p>
+            </div>
+            <div class="mechanic-card">
+                <div class="mechanic-icon">🧠</div>
+                <div class="feature-title">Strategic AI Engine</div>
+                <p>Advanced AI that adapts bowling strategies, field placements, and batting approaches based on match situations</p>
+            </div>
+            <div class="mechanic-card">
+                <div class="mechanic-icon">👕</div>
+                <div class="feature-title">Brand & Kit Designer</div>
+                <p>Create team jerseys, logos, and merchandise with sponsor integration and revenue sharing</p>
+            </div>
+            <div class="mechanic-card">
+                <div class="mechanic-icon">💱</div>
+                <div class="feature-title">Dynamic Trading Market</div>
+                <p>Real-time player valuations based on performance, rarity, and market demand with smart contract security</p>
+            </div>
+            <div class="mechanic-card">
+                <div class="mechanic-icon">🌍</div>
+                <div class="feature-title">Weather & Pitch Physics</div>
+                <p>Realistic weather effects, pitch deterioration, and ball physics that mirror real cricket conditions</p>
+            </div>
+        </div>
+        
+        <h3>Advanced Gameplay Features</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Match Engine Realism</div>
+                <p>• 360-degree shot selection with timing mechanics<br>• Realistic bowling variations and swing physics<br>• Dynamic DRS system with video replays<br>• Crowd psychology affecting player performance</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Team Chemistry System</div>
+                <p>• Player relationships affect on-field performance<br>• Cultural fit bonuses for regional players<br>• Leadership qualities impact team morale<br>• Veteran-rookie mentorship programs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Financial Management</div>
+                <p>• Complex salary cap and contract negotiations<br>• Stadium revenue and sponsorship deals<br>• Youth academy development costs<br>• Transfer market economics with agent fees</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Web3 Integration & NFT Economy -->
+    <div class="slide" id="slide-8">
+        <div class="slide-number">8/15</div>
+        <h2>💎 Web3 Integration & NFT Economy</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">Player NFTs</div>
+                <div class="stat-label">Unique Digital Athletes</div>
+                <small>Each with evolving stats, history, and rarity traits</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Stadium NFTs</div>
+                <div class="stat-label">Virtual Real Estate</div>
+                <small>Generate passive income through match hosting</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Kit & Brand NFTs</div>
+                <div class="stat-label">Creative Assets</div>
+                <small>Tradeable designs with royalty systems</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Achievement NFTs</div>
+                <div class="stat-label">Trophy Collection</div>
+                <small>Rare trophies for tournaments and milestones</small>
+            </div>
+        </div>
+
+        <h3>NFT Rarity & Utility System</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Legendary Players (0.1%)</div>
+                <p>• Retired cricket legends with maximum stats<br>• Special abilities and signature moves<br>• Breeding rights for next generation<br>• Exclusive tournament access</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Elite Players (2%)</div>
+                <p>• Current international stars<br>• Dynamic stats based on real performance<br>• Enhanced training capabilities<br>• Premium endorsement earnings</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Professional Players (15%)</div>
+                <p>• First-class and domestic cricketers<br>• Solid base stats with growth potential<br>• Standard utility functions<br>• Good investment opportunities</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Rising Stars (82.9%)</div>
+                <p>• Young talents and academy graduates<br>• High growth potential but lower starting stats<br>• Affordable entry point for new players<br>• Training and development focus</p>
+            </div>
+        </div>
+
+        <h3>Economic Mechanics</h3>
+        <div class="revenue-grid">
+            <div class="revenue-item">
+                <div class="percentage">7.5%</div>
+                <div><strong>Trading Fees</strong></div>
+                <small>Marketplace commission</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">5%</div>
+                <div><strong>Breeding Costs</strong></div>
+                <small>Create new players</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">10%</div>
+                <div><strong>Stadium Revenue</strong></div>
+                <small>Match hosting fees</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">3%</div>
+                <div><strong>Creator Royalties</strong></div>
+                <small>Kit designer earnings</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Business Model & Revenue Streams -->
+    <div class="slide" id="slide-9">
+        <div class="slide-number">9/15</div>
+        <h2>💰 Business Model & Revenue Streams</h2>
+        <div class="revenue-grid">
+            <div class="revenue-item">
+                <div class="percentage">35%</div>
+                <div><strong>NFT Marketplace</strong></div>
+                <small>7.5% commission on all trades</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">25%</div>
+                <div><strong>In-App Purchases</strong></div>
+                <small>Training boosts, cosmetics, currency</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">20%</div>
+                <div><strong>Season Passes</strong></div>
+                <small>Premium content & exclusive features</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">12%</div>
+                <div><strong>Advertising Revenue</strong></div>
+                <small>Stadium naming rights, kit sponsors</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">8%</div>
+                <div><strong>Tournament Fees</strong></div>
+                <small>Entry fees for premium competitions</small>
+            </div>
+        </div>
+
+        <h3>Key Unit Economics</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$4.20</div>
+                <div class="stat-label">ARPU (Monthly)</div>
+                <small>Higher than traditional games due to Web3 trading</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">14%</div>
+                <div class="stat-label">Conversion Rate</div>
+                <small>Strong conversion through ownership mechanics</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$58</div>
+                <div class="stat-label">Customer LTV</div>
+                <small>Extended lifecycle through asset ownership</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Day 1: 78%</div>
+                <div class="stat-label">Retention Rates</div>
+                <small>Day 7: 52% | Day 30: 28%</small>
+            </div>
+        </div>
+
+        <h3>Revenue Optimization Strategy</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Freemium Model</div>
+                <p>Free base game with premium Web3 features ensuring maximum user acquisition while monetizing engaged players</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Dual Economy</div>
+                <p>Traditional in-game currency for casual players and cryptocurrency integration for Web3 enthusiasts</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Community Revenue Share</div>
+                <p>Players earn from stadium ownership, kit designs, and tournament organization, creating sustainable engagement</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Target Market & User Acquisition -->
+    <div class="slide" id="slide-10">
+        <div class="slide-number">10/15</div>
+        <h2>🎯 Target Market & User Acquisition</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">55%</div>
+                <div class="stat-label">India (Primary)</div>
+                <small>1.4B cricket fans, 750M mobile gamers</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">South Asia</div>
+                <small>Pakistan, Bangladesh, Sri Lanka</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20%</div>
+                <div class="stat-label">Global Markets</div>
+                <small>UK, Australia, South Africa, West Indies</small>
+            </div>
+        </div>
+
+        <h3>User Acquisition Strategy</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Cricket Influencer Network</div>
+                <p>• Partner with 500+ cricket YouTubers and streamers<br>• Former player endorsements and gameplay content<br>• Authentic cricket community engagement<br>• Target cost: $25 per acquired user</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Fantasy Cricket Integration</div>
+                <p>• Cross-promote with Dream11, MPL, and similar platforms<br>• Target existing fantasy cricket players (200M+ users)<br>• Leverage cricket knowledge and engagement patterns<br>• Higher conversion due to strategic gameplay familiarity</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Grassroots Cricket Partnerships</div>
+                <p>• Partner with 1000+ cricket academies and clubs<br>• School tournament integrations<br>• Local cricket community building<br>• Youth cricket talent scouting programs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Web3 Community Outreach</div>
+                <p>• NFT and gaming Discord communities<br>• Crypto-native user acquisition<br>• GameFi enthusiast targeting<br>• Blockchain gaming early adopters</p>
+            </div>
+        </div>
+
+        <h3>Market Penetration Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-month">Months 1-3</div>
+                <div><strong>India Beta</strong></div>
+                <small>50K users, community feedback</small>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Months 4-9</div>
+                <div><strong>South Asia Launch</strong></div>
+                <small>500K users, localization</small>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Months 10-18</div>
+                <div><strong>Global Expansion</strong></div>
+                <small>5M users, full scale</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Financial Projections -->
+    <div class="slide" id="slide-11">
+        <div class="slide-number">11/15</div>
+        <h2>📊 Financial Projections</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">6 Months</div>
+                <div class="stat-label">300K Users</div>
+                <small>$140K Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12 Months</div>
+                <div class="stat-label">1.2M Users</div>
+                <small>$650K Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24 Months</div>
+                <div class="stat-label">5.5M Users</div>
+                <small>$3.2M Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">36 Months</div>
+                <div class="stat-label">18M Users</div>
+                <small>$12M Monthly Revenue</small>
+            </div>
+        </div>
+
+        <h3>Revenue Breakdown by Year 3</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">NFT Marketplace: $4.2M/month</div>
+                <p>• $56M monthly trading volume<br>• 7.5% platform fee<br>• Growing with user engagement<br>• Higher margin revenue stream</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">In-App Purchases: $3.0M/month</div>
+                <p>• Training boosts and cosmetics<br>• Premium currency sales<br>• Seasonal content packs<br>• Steady recurring revenue</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Season Passes: $2.4M/month</div>
+                <p>• Quarterly premium content<br>• Exclusive player access<br>• Advanced features unlock<br>• High retention driver</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Other Revenue: $2.4M/month</div>
+                <p>• Advertising and sponsorships<br>• Tournament entry fees<br>• Brand partnerships<br>• Merchandise licensing</p>
+            </div>
+        </div>
+
+        <h3>Path to Profitability</h3>
+        <p>Break-even at 18 months with 2.8M users. Strong unit economics and Web3 revenue streams create sustainable growth trajectory with 35% gross margins by Year 3.</p>
+    <!-- Slide 10: Financial Projections -->
+    <div class="slide" id="slide-10">
+        <div class="slide-number">10/15</div>
+        <h2>📊 Financial Projections & Growth</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">250K</div>
+                <div class="stat-label">Users @ 6 Months</div>
+                <small>$100K Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1M</div>
+                <div class="stat-label">Users @ 12 Months</div>
+                <small>$500K Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5M</div>
+                <div class="stat-label">Users @ 24 Months</div>
+                <small>$2.5M Monthly Revenue</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15M</div>
+                <div class="stat-label">Users @ 36 Months</div>
+                <small>$8M Monthly Revenue</small>
+            </div>
+        </div>
+        
+        <h3>Revenue Breakdown</h3>
+        <div class="revenue-breakdown">
+            <div class="revenue-item">
+                <div class="percentage">35%</div>
+                <div><strong>NFT Trading</strong></div>
+                <small>7.5% marketplace fee</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">25%</div>
+                <div><strong>In-App Purchases</strong></div>
+                <small>Premium features & boosts</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">20%</div>
+                <div><strong>Season Passes</strong></div>
+                <small>Exclusive content access</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">15%</div>
+                <div><strong>Advertising</strong></div>
+                <small>Brand partnerships</small>
+            </div>
+            <div class="revenue-item">
+                <div class="percentage">5%</div>
+                <div><strong>Tournaments</strong></div>
+                <small>Entry fees & prizes</small>
+            </div>
+        </div>
+
+        <div class="core-concept">
+            <div class="concept-title">🎮 Core Game Concept: Dynamic Cricket Universe</div>
+            <p><strong>Player Evolution System:</strong> Each player NFT grows through matches, training, and real-world cricket performance data integration. Players develop unique skills, injuries, and career arcs that affect their market value.</p>
+        </div>
+    </div>
+
+    <!-- Slide 11: Core Game Mechanics -->
+    <div class="slide" id="slide-11">
+        <div class="slide-number">11/15</div>
+        <h2>🎯 Core Game Mechanics</h2>
+        
+        <div class="core-concept">
+            <div class="concept-title">⚡ Live Match Engine</div>
+            <p>Real-time physics-based cricket simulation with ball-by-ball strategy decisions. Every delivery matters - field placement, bowling strategy, batting approach all controlled by you.</p>
+        </div>
+
+        <div class="core-concept">
+            <div class="concept-title">🏆 Stadium Economics</div>
+            <p>Build and upgrade stadiums that generate passive income. Better facilities attract more fans, increase ticket sales, and unlock premium tournaments. Stadium NFTs appreciate based on your team's success.</p>
+        </div>
+
+        <div class="core-concept">
+            <div class="concept-title">📈 Market Dynamics</div>
+            <p>Player values fluctuate based on performance, age, injuries, and market demand. Smart traders can profit from identifying undervalued talent or selling at peak performance moments.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">🎪 Tournament Ecosystem</div>
+                <p>From local club matches to World Championships. Each tournament tier offers different rewards, stakes, and prestige levels.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🤝 Guild Warfare</div>
+                <p>Join cricket guilds to compete in massive inter-guild tournaments. Share strategies, trade players, and dominate the global leaderboards together.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🎨 Creative Expression</div>
+                <p>Design custom jerseys, logos, stadiums, and celebration animations. Popular designs can be sold as NFTs to other players.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Development Roadmap -->
+    <div class="slide" id="slide-12">
+        <div class="slide-number">12/15</div>
+        <h2>🗓️ Development Roadmap</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-month">Phase 1: Months 1-6</div>
+                <div><strong>Foundation Build</strong></div>
+                <small>Core gameplay, team management, basic tournaments, 1K beta users</small>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Phase 2: Months 7-12</div>
+                <div><strong>Web3 Integration</strong></div>
+                <small>NFT launch, marketplace, blockchain features, India soft launch</small>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Phase 3: Months 13-18</div>
+                <div><strong>Global Scale</strong></div>
+                <small>Worldwide launch, esports leagues, 5M+ users target</small>
+            </div>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">MVP Milestones</div>
+                <p>• Cricket physics engine<br>• Player & team management<br>• Stadium builder<br>• Local tournaments<br>• Basic monetization</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Web3 Launch</div>
+                <p>• Player NFT minting<br>• Marketplace trading<br>• Wallet integration<br>• Play-to-earn mechanics<br>• Guild system launch</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Scale Phase</div>
+                <p>• Multi-language support<br>• Celebrity partnerships<br>• Global tournaments<br>• Advanced analytics<br>• Mobile optimization</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Team & Expertise -->
+    <div class="slide" id="slide-13">
+        <div class="slide-number">13/15</div>
+        <h2>👥 Team & Expertise</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-role">Game Development</div>
+                <div><strong>8 Unity Developers</strong></div>
+                <small>5+ years mobile gaming experience</small>
+            </div>
+            <div class="team-card">
+                <div class="team-role">Blockchain Engineers</div>
+                <div><strong>4 Web3 Specialists</strong></div>
+                <small>Smart contracts & NFT platforms</small>
+            </div>
+            <div class="team-card">
+                <div class="team-role">Cricket Experts</div>
+                <div><strong>3 Former Players</strong></div>
+                <small>Professional cricket background</small>
+            </div>
+            <div class="team-card">
+                <div class="team-role">Design Team</div>
+                <div><strong>5 Game Designers</strong></div>
+                <small>Sports & Web3 gaming experience</small>
+            </div>
+        </div>
+        
+        <h3>Advisory Board</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">Cricket Legends</div>
+                <p>Former international players providing game authenticity and marketing credibility</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Gaming Veterans</div>
+                <p>Senior executives from EA Sports, Supercell, and other major gaming companies</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Web3 Pioneers</div>
+                <p>Early NFT marketplace founders and blockchain gaming experts</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Funding Requirements -->
+    <div class="slide" id="slide-14">
+        <div class="slide-number">14/15</div>
+        <h2>💰 Funding Requirements</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$2.5M</div>
+                <div class="stat-label">Total Funding</div>
+                <small>18-month runway to profitability</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">Development Team</div>
+                <small>Salaries & contractor costs</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">Marketing & UA</div>
+                <small>User acquisition campaigns</small>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15%</div>
+                <div class="stat-label">Infrastructure</div>
+                <small>Servers, tools, blockchain costs</small>
+            </div>
+        </div>
+        
+        <h3>Investment Highlights</h3>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-title">🎯 Proven Market Demand</div>
+                <p>2.5B cricket fans with minimal quality gaming options available</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🚀 Technology Advantage</div>
+                <p>First authentic Web3 cricket experience with true asset ownership</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">💎 Strong Unit Economics</div>
+                <p>High LTV, multiple revenue streams, sustainable growth model</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Call to Action -->
+    <div class="slide" id="slide-15">
+        <div class="slide-number">15/15</div>
+        <h1>🏏 Join the Cricket Revolution</h1>
+        <p class="tagline" style="font-size: 1.6rem; color: #66ccff; margin: 30px 0; font-style: italic;">
+            "Where Cricket Passion Meets Digital Ownership"
+        </p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">2.5B</div>
+                <div class="stat-label">Fans Waiting</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$25B</div>
+                <div class="stat-label">Market Size</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">First</div>
+                <div class="stat-label">Web3 Cricket Game</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Ready</div>
+                <div class="stat-label">Experienced Team</div>
+            </div>
+        </div>
+        
+        <div class="core-concept">
+            <div class="concept-title">🎮 The Vision</div>
+            <p>Transform cricket from a spectator sport into an interactive economy where fans build real wealth through their cricket knowledge and strategic gameplay. Every match matters, every player has value, every decision impacts your digital empire.</p>
+        </div>
+        
+        <button class="cta-button">Thank you </button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="nav-dot active" onclick="goToSlide(10)"></div>
+        <div class="nav-dot" onclick="goToSlide(11)"></div>
+        <div class="nav-dot" onclick="goToSlide(12)"></div>
+        <div class="nav-dot" onclick="goToSlide(13)"></div>
+        <div class="nav-dot" onclick="goToSlide(14)"></div>
+        <div class="nav-dot" onclick="goToSlide(15)"></div>
+    </div>
+
+    <script>
+        let currentSlide = 10;
+        const totalSlides = 15;
+        const minSlide = 10;
+
+        function goToSlide(n) {
+            if (n < minSlide || n > totalSlides) return;
+            currentSlide = n;
+            document.getElementById(`slide-${n}`).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            updateNavigation();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                goToSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > minSlide) {
+                currentSlide--;
+                goToSlide(currentSlide);
+            }
+        }
+
+        function updateNavigation() {
+            document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+                if (index + minSlide === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Touch gestures
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        });
+
+        // Auto-scroll navigation update
+        window.addEventListener('scroll', function() {
+            const slides = document.querySelectorAll('.slide');
+            const scrollPos = window.scrollY + window.innerHeight / 2;
+            
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPos >= slideTop && scrollPos < slideBottom) {
+                    const slideNum = index + minSlide;
+                    if (currentSlide !== slideNum) {
+                        currentSlide = slideNum;
+                        updateNavigation();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
